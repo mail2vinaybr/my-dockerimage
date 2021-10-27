@@ -1,7 +1,7 @@
 FROM maven:3.8.3-openjdk-8-slim AS maven
 RUN mkdir /usr/src/mymaven
 WORKDIR /usr/src/mymaven
-COPY /home/ubuntu/java-app/my-java-test/ .
+COPY . .
 RUN mvn clean install
 
 FROM vinaybr07/mytest:tomcat9.0
