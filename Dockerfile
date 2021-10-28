@@ -5,6 +5,6 @@ COPY . .
 RUN mvn clean install
 
 FROM vinaybr07/mytest:tomcat9.0
-COPY --from=maven /usr/src/mymaven/target/*.jar /opt/tomcat/webapps/
+COPY --from=maven /usr/src/mymaven/target/*.jar /opt/tomcat/webapps/manager
 EXPOSE 8080
 CMD ["/opt/tomcat/bin/catalina.sh","run"]
